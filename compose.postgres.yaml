@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: ${PFA_POSTGRES_USER:?Supply protected environment configuration}
+      POSTGRES_PASSWORD: ${PFA_POSTGRES_PASSWORD:?Supply protected environment configuration}
+      POSTGRES_DB: ${PFA_POSTGRES_DATABASE:?Supply dedicated local database name}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pfa_postgres:/var/lib/postgresql/data
+    restart: "no"
+volumes:
+  pfa_postgres:

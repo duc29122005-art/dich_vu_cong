@@ -1,0 +1,389 @@
+{
+  "$defs": {
+    "Labels": {
+      "additionalProperties": false,
+      "properties": {
+        "topic": {
+          "anyOf": [
+            {
+              "enum": [
+                "delayed_processing",
+                "complex_procedure",
+                "unclear_guidance",
+                "online_system_error",
+                "staff_attitude",
+                "fees",
+                "unsatisfactory_result",
+                "other"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Topic"
+        },
+        "sentiment": {
+          "anyOf": [
+            {
+              "enum": [
+                "negative",
+                "neutral",
+                "positive"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sentiment"
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ],
+              "type": "string"
+            },
+            {
+              "const": "unknown",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity"
+        }
+      },
+      "title": "Labels",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "experiment_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "assignment_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Assignment Id",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "session_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Session Id",
+      "type": "string"
+    },
+    "case_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "condition": {
+      "enum": [
+        "MANUAL_ONLY",
+        "AI_ASSISTED"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "condition_order": {
+      "enum": [
+        "AB",
+        "BA"
+      ],
+      "title": "Condition Order",
+      "type": "string"
+    },
+    "model_version": {
+      "anyOf": [
+        {
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Version"
+    },
+    "model_versions": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+            "type": "string"
+          },
+          "propertyNames": {
+            "enum": [
+              "topic",
+              "sentiment",
+              "severity"
+            ]
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Versions"
+    },
+    "task_start_time": {
+      "format": "date-time",
+      "title": "Task Start Time",
+      "type": "string"
+    },
+    "task_end_time": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Task End Time"
+    },
+    "duration_seconds": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Duration Seconds"
+    },
+    "completion_status": {
+      "enum": [
+        "COMPLETED",
+        "INCOMPLETE",
+        "ABANDONED"
+      ],
+      "title": "Completion Status",
+      "type": "string"
+    },
+    "reviewer_topic": {
+      "anyOf": [
+        {
+          "enum": [
+            "delayed_processing",
+            "complex_procedure",
+            "unclear_guidance",
+            "online_system_error",
+            "staff_attitude",
+            "fees",
+            "unsatisfactory_result",
+            "other"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Topic"
+    },
+    "reviewer_sentiment": {
+      "anyOf": [
+        {
+          "enum": [
+            "negative",
+            "neutral",
+            "positive"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Sentiment"
+    },
+    "reviewer_severity": {
+      "anyOf": [
+        {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "type": "string"
+        },
+        {
+          "const": "unknown",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewer Severity"
+    },
+    "reference_gold_id": {
+      "anyOf": [
+        {
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reference Gold Id"
+    },
+    "ai_suggestion_shown": {
+      "title": "Ai Suggestion Shown",
+      "type": "boolean"
+    },
+    "ai_suggestion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Labels"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "ai_suggestion_accepted": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ai Suggestion Accepted"
+    },
+    "override_flag": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Override Flag"
+    },
+    "review_reason": {
+      "enum": [
+        "CONFIRM",
+        "CORRECT",
+        "UNCERTAIN",
+        "TIMEOUT",
+        "WITHDRAWAL"
+      ],
+      "title": "Review Reason",
+      "type": "string"
+    },
+    "measurement_source": {
+      "enum": [
+        "SYNTHETIC_FIXTURE",
+        "INSTRUMENTED_CLOCK",
+        "MANUAL_CLOCK"
+      ],
+      "title": "Measurement Source",
+      "type": "string"
+    },
+    "consent_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Consent Reference",
+      "type": "string"
+    },
+    "protocol_version": {
+      "const": "research-protocol-1",
+      "title": "Protocol Version",
+      "type": "string"
+    },
+    "perceived_usefulness": {
+      "anyOf": [
+        {
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Perceived Usefulness"
+    },
+    "perceived_workload": {
+      "anyOf": [
+        {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Perceived Workload"
+    }
+  },
+  "required": [
+    "mode",
+    "experiment_id",
+    "assignment_id",
+    "participant_id",
+    "session_id",
+    "case_id",
+    "condition",
+    "condition_order",
+    "task_start_time",
+    "completion_status",
+    "ai_suggestion_shown",
+    "review_reason",
+    "measurement_source",
+    "consent_reference",
+    "protocol_version"
+  ],
+  "title": "Observation",
+  "type": "object"
+}

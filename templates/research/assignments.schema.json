@@ -1,0 +1,76 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "experiment_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "assignment_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Assignment Id",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "case_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "condition": {
+      "enum": [
+        "MANUAL_ONLY",
+        "AI_ASSISTED"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "condition_order": {
+      "enum": [
+        "AB",
+        "BA"
+      ],
+      "title": "Condition Order",
+      "type": "string"
+    },
+    "period": {
+      "enum": [
+        1,
+        2
+      ],
+      "title": "Period",
+      "type": "integer"
+    },
+    "position": {
+      "minimum": 1,
+      "title": "Position",
+      "type": "integer"
+    },
+    "difficulty": {
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "title": "Difficulty",
+      "type": "string"
+    }
+  },
+  "required": [
+    "experiment_id",
+    "assignment_id",
+    "participant_id",
+    "case_id",
+    "condition",
+    "condition_order",
+    "period",
+    "position",
+    "difficulty"
+  ],
+  "title": "Assignment",
+  "type": "object"
+}

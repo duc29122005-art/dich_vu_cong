@@ -1,0 +1,18 @@
+{
+  "version": "analytics-1",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "small_group": 5,
+  "max_records": 5000,
+  "max_days": 366,
+  "agencies": ["demo_agency_a", "demo_agency_b"],
+  "domains": ["demo_domain_a", "demo_domain_b"],
+  "baseline_windows": 7,
+  "baseline_min_count": 10,
+  "current_min_count": 20,
+  "max_missing_date_share": 0.1,
+  "max_missing_label_share": 0.1,
+  "volume_ratio": 2.0,
+  "volume_sigma": 3.0,
+  "share_increase": 0.2,
+  "topic_increase": 0.25
+}

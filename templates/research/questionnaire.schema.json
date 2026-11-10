@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "consent_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Consent Reference",
+      "type": "string"
+    },
+    "collected_at": {
+      "format": "date-time",
+      "title": "Collected At",
+      "type": "string"
+    },
+    "perceived_usefulness": {
+      "anyOf": [
+        {
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Perceived Usefulness"
+    },
+    "perceived_workload": {
+      "anyOf": [
+        {
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Perceived Workload"
+    }
+  },
+  "required": [
+    "mode",
+    "participant_id",
+    "consent_reference",
+    "collected_at"
+  ],
+  "title": "Questionnaire",
+  "type": "object"
+}

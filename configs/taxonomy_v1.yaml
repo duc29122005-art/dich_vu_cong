@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "instrument_status": "PROPOSED_PENDING_HUMAN_APPROVAL",
+  "primary_topic_rule": "Một chủ đề chính cho mỗi phản ánh trong phạm vi; multiple_issues chỉ là cờ độc lập.",
+  "tie_breaking": [
+    "Ưu tiên vấn đề người viết xác định là trọng tâm hoặc yêu cầu giải quyết chính.",
+    "Nếu không có trọng tâm rõ, chọn vấn đề có tác động được mô tả cụ thể nhất; không suy diễn mức độ.",
+    "Nếu vẫn hòa, chọn vấn đề được trình bày đầu tiên và ghi lý do; nếu không đủ ngữ cảnh thì REQUIRES_REVIEW."
+  ],
+  "tasks": [
+    {
+      "task_id": "topic",
+      "single_label": true,
+      "workflow_states": ["OUT_OF_SCOPE", "UNLABELABLE"],
+      "labels": [
+        {"code": "delayed_processing", "name_vi": "Chậm xử lý hồ sơ", "definition": "Phản ánh thời gian chờ, tiến độ hoặc việc xử lý hồ sơ bị chậm; không tự khẳng định vi phạm thời hạn pháp luật."},
+        {"code": "complex_procedure", "name_vi": "Thủ tục phức tạp", "definition": "Phản ánh nhiều bước, yêu cầu giấy tờ hoặc lần bổ sung gây khó khăn trong thủ tục."},
+        {"code": "unclear_guidance", "name_vi": "Hướng dẫn không rõ ràng", "definition": "Thông tin hướng dẫn thiếu, khó hiểu hoặc mâu thuẫn khiến người dân không biết cách thực hiện."},
+        {"code": "online_system_error", "name_vi": "Lỗi hệ thống trực tuyến", "definition": "Sự cố kỹ thuật được mô tả của cổng dịch vụ hoặc chức năng trực tuyến."},
+        {"code": "staff_attitude", "name_vi": "Thái độ phục vụ", "definition": "Phản ánh cách giao tiếp, ứng xử hoặc thái độ của người phục vụ, kể cả nhận xét tích cực."},
+        {"code": "fees", "name_vi": "Chi phí / lệ phí", "definition": "Nội dung chính về khoản thu, mức phí, thanh toán hoặc tính minh bạch của chi phí; không tự kết luận khoản thu trái phép."},
+        {"code": "unsatisfactory_result", "name_vi": "Kết quả xử lý chưa phù hợp", "definition": "Nội dung tập trung vào kết quả, nội dung trả lời hoặc quyết định xử lý chưa đáp ứng vấn đề được nêu."},
+        {"code": "other", "name_vi": "Vấn đề khác", "definition": "Nội dung rõ nghĩa thuộc dịch vụ công nhưng không phù hợp bảy chủ đề còn lại; không dùng thay cho ngoài phạm vi hoặc thiếu ngữ cảnh."}
+      ]
+    },
+    {
+      "task_id": "sentiment",
+      "single_label": true,
+      "workflow_states": ["REQUIRES_REVIEW"],
+      "labels": [
+        {"code": "negative", "name_vi": "Tiêu cực", "definition": "Thái độ không hài lòng được thể hiện trực tiếp hoặc gián tiếp đủ rõ; không quyết định mức độ nghiêm trọng."},
+        {"code": "neutral", "name_vi": "Trung tính", "definition": "Câu hỏi hoặc trình bày thông tin không thể hiện thái độ tích cực hay tiêu cực đủ rõ; không thay cho nội dung không thể hiểu."},
+        {"code": "positive", "name_vi": "Tích cực", "definition": "Thái độ hài lòng, ghi nhận hoặc cảm ơn được thể hiện rõ, sau khi xét phủ định và ngữ cảnh."}
+      ]
+    },
+    {
+      "task_id": "severity",
+      "single_label": true,
+      "workflow_states": ["unknown"],
+      "labels": [
+        {"code": "low", "name_vi": "Thấp", "definition": "Có bằng chứng tác động nhỏ hoặc yêu cầu thông tin đơn giản, không có hậu quả đáng kể được mô tả; không mặc định từ việc thiếu bằng chứng."},
+        {"code": "medium", "name_vi": "Trung bình", "definition": "Có tác động hành chính, chi phí hoặc gián đoạn cụ thể đáng kể nhưng chưa có bằng chứng rủi ro nghiêm trọng hay khẩn cấp."},
+        {"code": "high", "name_vi": "Cao", "definition": "Có bằng chứng tác động nghiêm trọng, hậu quả lớn hoặc rủi ro khẩn cấp cụ thể; không suy ra chỉ từ cảm xúc tiêu cực hay thời hạn chưa được xác minh."}
+      ]
+    }
+  ]
+}

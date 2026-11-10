@@ -1,0 +1,62 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "experiment_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Experiment Id",
+      "type": "string"
+    },
+    "assignment_id": {
+      "anyOf": [
+        {
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Assignment Id"
+    },
+    "code": {
+      "enum": [
+        "MISSING",
+        "WITHDRAWAL",
+        "CLOCK_ERROR",
+        "PROTOCOL_DEVIATION",
+        "EXCLUDED"
+      ],
+      "title": "Code",
+      "type": "string"
+    },
+    "evidence_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Evidence Reference",
+      "type": "string"
+    },
+    "recorded_at": {
+      "format": "date-time",
+      "title": "Recorded At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mode",
+    "experiment_id",
+    "code",
+    "evidence_reference",
+    "recorded_at"
+  ],
+  "title": "Deviation",
+  "type": "object"
+}

@@ -1,0 +1,102 @@
+{
+  "sources": [
+    {
+      "source_id": "uit_vsfc",
+      "source_name": "UIT Vietnamese Students Feedback Corpus",
+      "source_url": "https://huggingface.co/datasets/uitnlp/vietnamese_students_feedback",
+      "description": "Vietnamese student feedback benchmark, as described in the project brief; not a primary public-service dataset.",
+      "domain_fit": "ADJACENT", "dataset_role": "BENCHMARK",
+      "available_tasks": ["UNKNOWN"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "UNKNOWN",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "public_service_official",
+      "source_name": "Official public-service feedback portal candidate",
+      "source_url": "https://vpcp.dichvucong.gov.vn/p/phananhkiennghi/pakn-tra-loi.html",
+      "description": "Candidate primary citizen-feedback source identified in the brief. Do not scrape or download.",
+      "domain_fit": "DIRECT", "dataset_role": "PRIMARY_CANDIDATE",
+      "available_tasks": ["UNKNOWN"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "Permission request required; no scraping or download",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "authorized_agency_export",
+      "source_name": "Agency-provided de-identified export candidate",
+      "source_url": "UNKNOWN",
+      "description": "Preferred primary acquisition route if an agency supplies documented approval and de-identified records.",
+      "domain_fit": "DIRECT", "dataset_role": "PRIMARY_CANDIDATE",
+      "available_tasks": ["UNKNOWN"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "Documented agency approval and controlled export required",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "neu_esc",
+      "source_name": "NEU-ESC",
+      "source_url": "https://huggingface.co/datasets/hung20gg/NEU-ESC",
+      "description": "Auxiliary Vietnamese NLP benchmark; brief reports gated access, conditions unverified.",
+      "domain_fit": "ADJACENT", "dataset_role": "AUXILIARY",
+      "available_tasks": ["UNKNOWN"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "Gated per project brief; verify conditions before access",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "vn_mps_qa",
+      "source_name": "Vietnamese MPS public-service QA reference",
+      "source_url": "https://github.com/doanhieung/vn-mps-public-service-dataset",
+      "description": "Public administration terminology and QA reference; not labeled citizen feedback.",
+      "domain_fit": "INDIRECT", "dataset_role": "REFERENCE",
+      "available_tasks": ["QA_REFERENCE"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "UNKNOWN",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "sipas",
+      "source_name": "Provincial SIPAS indicators",
+      "source_url": "https://huggingface.co/datasets/letrinhan/vn-sipas-provincial",
+      "description": "Aggregate administrative satisfaction indicators; not individual feedback labels.",
+      "domain_fit": "ADJACENT", "dataset_role": "AGGREGATE",
+      "available_tasks": ["AGGREGATE_CONTEXT"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "UNKNOWN",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    },
+    {
+      "source_id": "synthetic_demo",
+      "source_name": "SYNTHETIC development examples",
+      "source_url": "UNKNOWN",
+      "description": "Only invented offline examples, always marked SYNTHETIC; no real citizen records. No dataset created in STEP 02.",
+      "domain_fit": "SYNTHETIC", "dataset_role": "SYNTHETIC",
+      "available_tasks": ["SOFTWARE_TESTS"], "expected_schema": {"UNKNOWN": "UNKNOWN"},
+      "license_status": "UNKNOWN", "permission_status": "PENDING",
+      "allowed_processing": [], "allowed_training": false, "allowed_publication": false,
+      "pii_risk": "UNKNOWN", "access_method": "Local generation only after scope review; no source download",
+      "coverage": "UNKNOWN", "last_verified": "UNKNOWN", "source_owner": "UNKNOWN",
+      "evidence_references": ["docs/DATASET_DECISION.md#evidence-boundary"],
+      "retention_policy": "UNKNOWN"
+    }
+  ]
+}

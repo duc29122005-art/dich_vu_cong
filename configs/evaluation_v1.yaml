@@ -1,0 +1,19 @@
+{
+  "version": "evaluation-protocol-1",
+  "seed": 42,
+  "selection_metric": "validation_macro_f1",
+  "family_order": ["lr", "svm", "phobert"],
+  "role_ratios": [0.4, 0.3, 0.3],
+  "calibration": "ovr_sigmoid",
+  "minimum_calibration_per_class": 2,
+  "threshold_grid": [0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.0],
+  "maximum_selective_risk": 0.1,
+  "minimum_automated_records": 5,
+  "review_severity_high": true,
+  "bootstrap_replicates": 500,
+  "bootstrap_minimum_groups": 20,
+  "bootstrap_minimum_class_support": 5,
+  "confidence_level": 0.95,
+  "normalization": "conservative-1",
+  "preprocessing_policy": "FAMILY_SPECIFIC_FROZEN"
+}

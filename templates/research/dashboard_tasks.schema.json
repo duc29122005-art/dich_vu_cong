@@ -1,0 +1,107 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "consent_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Consent Reference",
+      "type": "string"
+    },
+    "task_id": {
+      "enum": [
+        "denominator",
+        "missing_dates",
+        "alert_support",
+        "basis"
+      ],
+      "title": "Task Id",
+      "type": "string"
+    },
+    "answer_code": {
+      "anyOf": [
+        {
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Answer Code"
+    },
+    "completion_status": {
+      "enum": [
+        "COMPLETED",
+        "INCOMPLETE",
+        "ABANDONED"
+      ],
+      "title": "Completion Status",
+      "type": "string"
+    },
+    "task_start_time": {
+      "format": "date-time",
+      "title": "Task Start Time",
+      "type": "string"
+    },
+    "task_end_time": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Task End Time"
+    },
+    "duration_seconds": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Duration Seconds"
+    },
+    "dashboard_version": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Dashboard Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mode",
+    "participant_id",
+    "consent_reference",
+    "task_id",
+    "completion_status",
+    "task_start_time",
+    "dashboard_version"
+  ],
+  "title": "Usability",
+  "type": "object"
+}

@@ -1,0 +1,11 @@
+{
+  "mode": "APPROVED_MODEL",
+  "host": "127.0.0.1",
+  "port": 8000,
+  "max_text_length": 4000,
+  "max_batch_size": 16,
+  "max_body_bytes": 262144,
+  "body_timeout_seconds": 5.0,
+  "max_concurrency": 1,
+  "cors_origins": []
+}

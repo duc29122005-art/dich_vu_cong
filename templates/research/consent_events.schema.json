@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "consent_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Consent Reference",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "title": "Sequence",
+      "type": "integer"
+    },
+    "state": {
+      "enum": [
+        "GRANTED",
+        "WITHDRAWN",
+        "DECLINED"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "occurred_at": {
+      "format": "date-time",
+      "title": "Occurred At",
+      "type": "string"
+    },
+    "evidence_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Evidence Reference",
+      "type": "string"
+    },
+    "information_sheet_version": {
+      "const": "participant-info-1",
+      "title": "Information Sheet Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mode",
+    "consent_reference",
+    "participant_id",
+    "sequence",
+    "state",
+    "occurred_at",
+    "evidence_reference",
+    "information_sheet_version"
+  ],
+  "title": "ConsentEvent",
+  "type": "object"
+}

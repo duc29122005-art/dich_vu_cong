@@ -1,0 +1,103 @@
+name: Offline engineering validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HF_HUB_OFFLINE: '1'
+  HF_DATASETS_OFFLINE: '1'
+  TRANSFORMERS_OFFLINE: '1'
+  CUDA_VISIBLE_DEVICES: ''
+  PYTHONPATH: 'src:.'
+  PFA_ENVIRONMENT: test
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-ci.lock
+      - name: Install exact engineering environment (packages only)
+        run: |
+          python -m pip install -r requirements-ci.lock
+          python -m pip install --no-deps -e .
+          python -m pip check
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m pfa.cli integration security-check
+      - name: Offline tests (PostgreSQL covered in separate required job)
+        run: >-
+          python -m pytest -q --ignore=tests/test_postgres.py
+          --ignore=tests/test_analytics_postgres.py --ignore=tests/test_integration_postgres.py
+      - run: python -m pfa.cli integration smoke
+      - run: python -m pfa.cli release preflight --isolated
+      - run: python -m pfa.cli release smoke
+      - name: Research governance gates
+        run: |
+          python -m pfa.cli research protocol-check
+          python -m pytest -q tests/test_research.py
+
+  postgres:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:18.6
+        env:
+          POSTGRES_USER: pfa_ci
+          POSTGRES_PASSWORD: ci_disposable_only
+          POSTGRES_DB: pfa_ci_test
+        ports:
+          - 127.0.0.1:5432:5432
+        options: >-
+          --health-cmd "pg_isready -U pfa_ci -d pfa_ci_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      # Public test-only value for this disposable service. Never a production secret.
+      PFA_CI_PASSWORD: ci_disposable_only
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-ci.lock
+      - run: |
+          python -m pip install -r requirements-ci.lock
+          python -m pip install --no-deps -e .
+      - name: Configure disposable local target without printing URL
+        shell: python
+        run: |
+          import os
+          from sqlalchemy.engine import URL
+          url = URL.create('postgresql+psycopg', username='pfa_ci',
+                           password=os.environ['PFA_CI_PASSWORD'], host='127.0.0.1',
+                           port=5432, database='pfa_ci_test')
+          with open(os.environ['GITHUB_ENV'], 'a') as out:
+              out.write('TEST_DATABASE_URL=' + url.render_as_string(hide_password=False) + '\n')
+      - name: Required migrations, constraints, rollback, restart, audit and concurrent claims
+        run: python -m pfa.cli integration smoke-postgres
+      - name: Required PostgreSQL regression tests (configuration checked above)
+        run: >-
+          python -m pytest -q tests/test_postgres.py tests/test_analytics_postgres.py
+          tests/test_integration_postgres.py

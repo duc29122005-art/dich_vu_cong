@@ -1,0 +1,18 @@
+{
+  "provenance": "SYNTHETIC — invented software-test records, not UIT-VSFC samples",
+  "valid_rows": [
+    {"sentence": "GIẢ LẬP: Giảng viên giải thích rõ ràng.", "sentiment": 2, "topic": 0},
+    {"sentence": "GIẢ LẬP: Chương trình cần cải thiện.", "sentiment": 0, "topic": 1},
+    {"sentence": "GIẢ LẬP: Phòng học ở mức bình thường.", "sentiment": 1, "topic": 2},
+    {"sentence": "GIẢ LẬP: Ý kiến khác về học tập.", "sentiment": 1, "topic": 3}
+  ],
+  "invalid_rows": [
+    {"sentence": null, "sentiment": 0, "topic": 0},
+    {"sentence": "", "sentiment": 0, "topic": 0},
+    {"sentence": "   ", "sentiment": 0, "topic": 0},
+    {"sentence": "GIẢ LẬP: Nhãn không hợp lệ.", "sentiment": 3, "topic": 0},
+    {"sentence": "GIẢ LẬP: Nhãn không hợp lệ.", "sentiment": 0, "topic": 4},
+    {"sentence": "GIẢ LẬP: Nhãn không hợp lệ.", "sentiment": true, "topic": 0},
+    {"sentence": "GIẢ LẬP: Nhãn không hợp lệ.", "sentiment": 0, "topic": "1"}
+  ]
+}

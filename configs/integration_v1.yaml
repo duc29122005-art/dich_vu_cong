@@ -1,0 +1,93 @@
+{
+  "version": "integration-1",
+  "mode": "SYNTHETIC_ENGINEERING_TEST",
+  "source_id": "synthetic_demo",
+  "seed": 8,
+  "postgres_target": "LOCAL_DATABASE_NAME_ENDING_IN_TEST",
+  "reviewed_exclusions": [
+    {
+      "path": "tests/fixtures/privacy_audit_synthetic.json",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "537f8581031802450a317acefaaffbecb3ae364f5740f26571dac21cfd8dfa22",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/fixtures/public_service_feedback_synthetic.csv",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "b144ff672d7760906bfee61b097d60fe9ef5b45e6c2df51ce145b69b2af0b872",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/fixtures/public_service_feedback_synthetic.csv",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "b144ff672d7760906bfee61b097d60fe9ef5b45e6c2df51ce145b69b2af0b872",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_dashboard.py",
+      "rule": "LITERAL_SECRET",
+      "line_sha256": "54fcdd459b95e004849fe2c858201b877ee3e37a5be55e62865ed85f132e307c",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_official.py",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "9a1e87b9a745b1d4e571fa3922b6f28babab800ef6b1b5119d3b09f6d31e6cae",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_official.py",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "5d9f9447daae35389c28a9afa5f0520e0ecfb45be80d4300ac58e3ee5ee7c75c",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_official.py",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "eef97c06127434c6047c1272cb9532b7a194d9d50d0fe2b1ee35ffffe0c34dc9",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_profiling.py",
+      "rule": "SENSITIVE_IDENTIFIER",
+      "line_sha256": "b5dcfe3e5fc02a9901afeef64203c5af56c9d462437b5b6af5fa05606a1f6ce5",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_research.py",
+      "rule": "LITERAL_SECRET",
+      "line_sha256": "80379d81eb00630dfd4d2b58e3b07154635cc1b142224a61924acb8898a153bf",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_db.py",
+      "rule": "LITERAL_SECRET",
+      "line_sha256": "6b372fcae711017bfe23ffe483d6cad72d9707ef8907a4d7f44a3b814fc1cfbc",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_db.py",
+      "rule": "CREDENTIAL_URL",
+      "line_sha256": "bb6bdc97b21c75fb5de265f404402d04e4b0620be3f597cb3d34ccbc9587caf1",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": "tests/test_db.py",
+      "rule": "LITERAL_SECRET",
+      "line_sha256": "bb6bdc97b21c75fb5de265f404402d04e4b0620be3f597cb3d34ccbc9587caf1",
+      "reason": "Reviewed invented privacy fixture or fixed nonsecret error sentinel; never actual citizen information or credentials."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "rule": "ENV_SECRET",
+      "line_sha256": "17f4427cf6eaec26815f1b3b38d8d6a13cb55e10680f17c98f3a4bbd12b15c80",
+      "reason": "Reviewed public CI-only password for an ephemeral isolated PostgreSQL service; never a local or production credential."
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "rule": "ENV_SECRET",
+      "line_sha256": "c0dc2089f5f24c6cf36ce044746cbea33796caae2a21985229a6171dca477923",
+      "reason": "Reviewed public CI-only password for an ephemeral isolated PostgreSQL service; never a local or production credential."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "release-1",
+  "release_id": "pfa-0.1.0-technical-demo-1",
+  "project_version": "0.1.0",
+  "classification": "TECHNICAL_DEMO_ONLY",
+  "python": "3.11",
+  "api_version": "1.0.0",
+  "api_schema": "prediction-schema-1",
+  "taxonomy_version": "1.0.0",
+  "taxonomy_reference": "configs/taxonomy_v1.yaml",
+  "research_protocol_reference": "configs/research_protocol_v1.yaml",
+  "fixture_version": "synthetic-release-fixtures-1",
+  "fixture_seed": 17,
+  "model_mode": "DEMO_ONLY",
+  "datastore": "OWNED_TEMPORARY_SQLITE",
+  "bind_host": "127.0.0.1",
+  "required_checks": ["configuration", "dependencies", "governance", "ci", "security", "synthetic_smoke", "manifest"],
+  "restrictions": ["NO_REAL_DATA", "NO_RESEARCH_RESULTS", "NO_APPROVED_MODEL", "LOCALHOST_ONLY", "NO_AUTOMATIC_PUBLICATION"]
+}

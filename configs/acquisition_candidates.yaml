@@ -1,0 +1,64 @@
+{
+  "research_date": "2026-11-04",
+  "method": "Metadata-only review; no feedback bodies or dataset files accessed",
+  "discovery_slots": [{
+    "slot_id": "licensed_open_feedback",
+    "source_id": null,
+    "source_url": "UNKNOWN",
+    "verification": "NOT_AVAILABLE",
+    "next_action": "A human must identify an actual relevant licensed corpus and verify owner, terms, provenance and scope before registering a new source"
+  }],
+  "candidates": [
+    {
+      "source_id": "authorized_agency_export",
+      "data_owner": "UNKNOWN",
+      "source_url": "UNKNOWN",
+      "contact_route": "UNKNOWN",
+      "dataset_relevance": "Preferred route for individual Vietnamese citizen feedback if the competent agency approves a de-identified export",
+      "available_fields": ["UNKNOWN"],
+      "expected_sample_count": "UNKNOWN",
+      "requested_sample_count": "2000-5000 (research request, not confirmed availability)",
+      "time_coverage": "UNKNOWN",
+      "license_status": "UNKNOWN",
+      "permission_status": "PENDING",
+      "pii_risk": "UNKNOWN",
+      "acquisition_method": "Human-approved agency export through a documented secure channel; no scraping",
+      "next_human_action": "Identify the competent owner and official contact, verify their authority, review and sign the request package",
+      "evidence_references": ["docs/DATA_REQUEST_TEMPLATE.md", "docs/REAL_DATA_SOURCE_SHORTLIST.md"]
+    },
+    {
+      "source_id": "public_service_official",
+      "data_owner": "UNKNOWN",
+      "source_url": "https://vpcp.dichvucong.gov.vn/p/phananhkiennghi/pakn-tra-loi.html",
+      "contact_route": "UNKNOWN",
+      "dataset_relevance": "Candidate citizen public-service complaints source from the existing registry; access does not imply reuse rights",
+      "available_fields": ["UNKNOWN"],
+      "expected_sample_count": "UNKNOWN",
+      "requested_sample_count": "2000-5000 (research request, not confirmed availability)",
+      "time_coverage": "UNKNOWN",
+      "license_status": "UNKNOWN",
+      "permission_status": "PENDING",
+      "pii_risk": "UNKNOWN",
+      "acquisition_method": "Request an authorized de-identified export; do not scrape the public page",
+      "next_human_action": "Verify legal data custodian and official contact route, obtain written permission before transfer",
+      "evidence_references": ["https://vpcp.dichvucong.gov.vn/", "docs/REAL_DATA_SOURCE_SHORTLIST.md"]
+    },
+    {
+      "source_id": "vn_mps_qa",
+      "data_owner": "UNKNOWN",
+      "source_url": "https://github.com/doanhieung/vn-mps-public-service-dataset",
+      "contact_route": "UNKNOWN",
+      "dataset_relevance": "Public administration QA/terminology reference from the existing registry; not verified individual citizen-feedback labels",
+      "available_fields": ["UNKNOWN"],
+      "expected_sample_count": "UNKNOWN",
+      "requested_sample_count": "UNKNOWN",
+      "time_coverage": "UNKNOWN",
+      "license_status": "UNKNOWN",
+      "permission_status": "PENDING",
+      "pii_risk": "UNKNOWN",
+      "acquisition_method": "Reference-only candidate pending ownership/license verification; official feedback reception gate rejects reference sources",
+      "next_human_action": "Verify original rights and dataset content suitability; do not substitute QA for citizen-feedback annotations",
+      "evidence_references": ["https://api.github.com/repos/doanhieung/vn-mps-public-service-dataset", "docs/REAL_DATA_SOURCE_SHORTLIST.md"]
+    }
+  ]
+}

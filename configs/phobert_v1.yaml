@@ -1,0 +1,18 @@
+{
+  "version": "phobert-config-1",
+  "checkpoint": "vinai/phobert-base",
+  "checkpoint_directory": null,
+  "checkpoint_evidence_ref": null,
+  "segmenter": {"backend": "vncorenlp", "model_directory": null, "version": null},
+  "max_length": 256,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "weight_decay": 0.01,
+  "batch_size": 8,
+  "gradient_accumulation": 1,
+  "eval_every_epochs": 1,
+  "patience": 2,
+  "min_delta": 0.0,
+  "device": "auto",
+  "cpu_threads": 1
+}

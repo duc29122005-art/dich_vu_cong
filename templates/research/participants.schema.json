@@ -1,0 +1,37 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "participant_id": {
+      "pattern": "^p_[a-f0-9]{16}$",
+      "title": "Participant Id",
+      "type": "string"
+    },
+    "consent_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Consent Reference",
+      "type": "string"
+    },
+    "eligibility_reference": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Eligibility Reference",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mode",
+    "participant_id",
+    "consent_reference",
+    "eligibility_reference"
+  ],
+  "title": "Participant",
+  "type": "object"
+}

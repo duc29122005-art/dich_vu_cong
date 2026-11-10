@@ -1,0 +1,43 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "enum": [
+        "SYNTHETIC_ENGINEERING_TEST",
+        "HUMAN_FEASIBILITY_PILOT",
+        "AUTHORIZED_RESEARCH"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "reference_gold_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Reference Gold Id",
+      "type": "string"
+    },
+    "case_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "pilot_id": {
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_]{1,79}$",
+      "title": "Pilot Id",
+      "type": "string"
+    },
+    "adjudicated_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Adjudicated Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mode",
+    "reference_gold_id",
+    "case_id",
+    "pilot_id",
+    "adjudicated_sha256"
+  ],
+  "title": "GoldReference",
+  "type": "object"
+}

@@ -1,0 +1,12 @@
+{
+  "version": "baseline-config-1",
+  "features": "word_char",
+  "word_ngram_range": [1, 2],
+  "char_ngram_range": [3, 5],
+  "max_features": 20000,
+  "min_df": 1,
+  "c_values": [0.5, 1.0],
+  "class_weight": "balanced",
+  "max_iter": 2000,
+  "tolerance": 0.0001
+}

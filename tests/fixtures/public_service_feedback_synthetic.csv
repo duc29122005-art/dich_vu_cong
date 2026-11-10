@@ -1,0 +1,11 @@
+feedback_id,content,created_at,source_id,domain,agency,channel,processing_status,response_date
+S01,Thủ tục trực tuyến xử lý nhanh và hướng dẫn rõ ràng.,2026-01-02T09:00:00+07:00,synthetic_fixture,GIẢ LẬP,,trực tuyến,,
+S02,GIẢ LẬP liên hệ 0123456789 citizen@example.invalid CCCD 000000000000.,,synthetic_fixture,,,,,
+S03,Thủ tục trực tuyến xử lý rất nhanh và hướng dẫn rõ ràng.,2026-01-03T10:00:00+07:00,synthetic_fixture,,,,,
+S04,Thủ tục trực tuyến xử lý nhanh và hướng dẫn rõ ràng.,,synthetic_fixture,,,,,
+S01,GIẢ LẬP mã phản ánh trùng nhưng nội dung khác.,,synthetic_fixture,,,,,
+S02,GIẢ LẬP liên hệ 0123456789 citizen@example.invalid CCCD 000000000000.,,synthetic_fixture,,,,,
+S05,Họ tên: NGƯỜI GIẢ LẬP. Địa chỉ: số 0 đường GIẢ LẬP.,,synthetic_fixture,,,,,
+S06,,,synthetic_fixture,,,,,
+S07,GIẢ LẬP thời gian không hợp lệ.,not-a-date,synthetic_fixture,,,,,
+S08,GIẢ LẬP cần bổ sung hướng dẫn cho biểu mẫu mới.,,synthetic_fixture,,,,,

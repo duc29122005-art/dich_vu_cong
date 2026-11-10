@@ -1,0 +1,17 @@
+{
+  "dataset_type": "SYNTHETIC",
+  "purpose": "Invented software cases, never research examples",
+  "cases": [
+    {"text": "GIẢ LẬP liên hệ person@example.invalid", "expected": ["email"]},
+    {"text": "GIẢ LẬP điện thoại 0123456789", "expected": ["phone"]},
+    {"text": "GIẢ LẬP CCCD 000000000000", "expected": ["citizen_id"]},
+    {"text": "GIẢ LẬP STK 654321", "expected": ["personal_identifier"]},
+    {"text": "Địa chỉ: VÙNG GIẢ LẬP", "expected": ["address"]},
+    {"text": "Họ tên: NGƯỜI GIẢ LẬP", "expected": ["personal_name"]},
+    {"text": "Mã hồ sơ: HS-12345 GIẢ LẬP", "expected": ["case_number"]},
+    {"text": "Hồ sơ bệnh án GIẢ LẬP", "expected": ["sensitive_context"]},
+    {"text": "GIẢ LẬP mã hàng hóa 0123456789", "expected": []},
+    {"text": "Ông Người Giả Lập cần hướng dẫn", "expected": ["personal_name"]},
+    {"text": "Thủ tục chưa từng nhanh, không rõ hướng dẫn!", "expected": []}
+  ]
+}
